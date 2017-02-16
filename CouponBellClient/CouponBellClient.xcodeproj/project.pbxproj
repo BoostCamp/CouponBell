@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58252FE61E55FB890023F47B /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58252FE51E55FB890023F47B /* Socket.swift */; };
 		586524091E51872200E3E79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524081E51872200E3E79C /* AppDelegate.swift */; };
 		5865240B1E51872200E3E79C /* paymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865240A1E51872200E3E79C /* paymentTableViewController.swift */; };
 		5865240E1E51872200E3E79C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5865240C1E51872200E3E79C /* Main.storyboard */; };
@@ -55,6 +56,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
+		58252FE51E55FB890023F47B /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		586524051E51872200E3E79C /* CouponBellClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponBellClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586524081E51872200E3E79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5865240A1E51872200E3E79C /* paymentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentTableViewController.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 			isa = PBXGroup;
 			children = (
 				586524081E51872200E3E79C /* AppDelegate.swift */,
+				58252FE51E55FB890023F47B /* Socket.swift */,
 				58C1A7DC1E55A64F00B64413 /* Controller */,
 				58C1A7DE1E55A68A00B64413 /* Model */,
 				58C1A7DD1E55A67500B64413 /* View */,
@@ -303,6 +306,7 @@
 				586524311E518B4600E3E79C /* Menu.swift in Sources */,
 				58C1A7E01E55A6BA00B64413 /* MyOrderList.swift in Sources */,
 				5865240B1E51872200E3E79C /* paymentTableViewController.swift in Sources */,
+				58252FE61E55FB890023F47B /* Socket.swift in Sources */,
 				58C1A7E21E55AA4600B64413 /* DbQuery.swift in Sources */,
 				586524351E5192C200E3E79C /* CartTableViewController.swift in Sources */,
 				58C1A7D01E54382800B64413 /* paymentTableViewCell.swift in Sources */,

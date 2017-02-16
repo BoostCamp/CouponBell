@@ -32,7 +32,6 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
 //        dbQuery.addMenuList(type: "Tea", product: "BlackTea", price: 2000)         //
 //        dbQuery.addMenuList(type: "Bread", product: "Bagle", price: 2500)          //
 ///////////////////////////////////////////////////////////////////////////////////////
-        print(NSHomeDirectory())
         
         super.viewDidLoad()
     }

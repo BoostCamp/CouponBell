@@ -25,6 +25,9 @@ class paymentTableViewController: UIViewController, UITableViewDelegate, UITable
         // Do any additional setup after loading the view, typically from a nib.
     }
     
+    @IBAction func sendBtn(_ sender: Any) {
+        (UIApplication.shared.delegate as! AppDelegate).sendMessage(msg: "abcdefg")
+    }
     override func viewWillAppear(_ animated: Bool) {
         for myOrder in appDelegate.myOrderList{
             if myOrder.quantity > 0 {
