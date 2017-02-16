@@ -1,0 +1,539 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		586524091E51872200E3E79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524081E51872200E3E79C /* AppDelegate.swift */; };
+		5865240B1E51872200E3E79C /* paymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865240A1E51872200E3E79C /* paymentTableViewController.swift */; };
+		5865240E1E51872200E3E79C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5865240C1E51872200E3E79C /* Main.storyboard */; };
+		586524101E51872200E3E79C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5865240F1E51872200E3E79C /* Assets.xcassets */; };
+		586524131E51872200E3E79C /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 586524111E51872200E3E79C /* LaunchScreen.storyboard */; };
+		5865241E1E51872200E3E79C /* CouponBellClientTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865241D1E51872200E3E79C /* CouponBellClientTests.swift */; };
+		586524311E518B4600E3E79C /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865242E1E518B4600E3E79C /* Menu.swift */; };
+		586524351E5192C200E3E79C /* CartTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524341E5192C200E3E79C /* CartTableViewController.swift */; };
+		586524371E5192FF00E3E79C /* CartTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524361E5192FF00E3E79C /* CartTableViewCell.swift */; };
+		586524391E51950F00E3E79C /* MenuTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524381E51950F00E3E79C /* MenuTableViewController.swift */; };
+		5865243B1E51955500E3E79C /* MenuTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865243A1E51955500E3E79C /* MenuTableViewCell.swift */; };
+		58C1A79B1E540E4B00B64413 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C1A7991E540E4B00B64413 /* RealmSwift.framework */; };
+		58C1A79C1E540E4B00B64413 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C1A79A1E540E4B00B64413 /* Realm.framework */; };
+		58C1A79D1E540E7900B64413 /* RealmSwift.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C1A7991E540E4B00B64413 /* RealmSwift.framework */; };
+		58C1A79E1E540E7900B64413 /* RealmSwift.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58C1A7991E540E4B00B64413 /* RealmSwift.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58C1A79F1E540E7900B64413 /* Realm.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 58C1A79A1E540E4B00B64413 /* Realm.framework */; };
+		58C1A7A01E540E7900B64413 /* Realm.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 58C1A79A1E540E4B00B64413 /* Realm.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		58C1A7D01E54382800B64413 /* paymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7CF1E54382800B64413 /* paymentTableViewCell.swift */; };
+		58C1A7E01E55A6BA00B64413 /* MyOrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7DF1E55A6BA00B64413 /* MyOrderList.swift */; };
+		58C1A7E21E55AA4600B64413 /* DbQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7E11E55AA4600B64413 /* DbQuery.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		5865241A1E51872200E3E79C /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 586523FD1E51872200E3E79C /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 586524041E51872200E3E79C;
+			remoteInfo = CouponBellClient;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		58C1A7A11E540E7900B64413 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				58C1A7A01E540E7900B64413 /* Realm.framework in Embed Frameworks */,
+				58C1A79E1E540E7900B64413 /* RealmSwift.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		586524051E51872200E3E79C /* CouponBellClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponBellClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		586524081E51872200E3E79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5865240A1E51872200E3E79C /* paymentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentTableViewController.swift; sourceTree = "<group>"; };
+		5865240D1E51872200E3E79C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5865240F1E51872200E3E79C /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		586524121E51872200E3E79C /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		586524141E51872200E3E79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		586524191E51872200E3E79C /* CouponBellClientTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CouponBellClientTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		5865241D1E51872200E3E79C /* CouponBellClientTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CouponBellClientTests.swift; sourceTree = "<group>"; };
+		5865241F1E51872200E3E79C /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		5865242E1E518B4600E3E79C /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
+		586524341E5192C200E3E79C /* CartTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewController.swift; sourceTree = "<group>"; };
+		586524361E5192FF00E3E79C /* CartTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartTableViewCell.swift; sourceTree = "<group>"; };
+		586524381E51950F00E3E79C /* MenuTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewController.swift; sourceTree = "<group>"; };
+		5865243A1E51955500E3E79C /* MenuTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MenuTableViewCell.swift; sourceTree = "<group>"; };
+		58C1A7991E540E4B00B64413 /* RealmSwift.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = RealmSwift.framework; sourceTree = "<group>"; };
+		58C1A79A1E540E4B00B64413 /* Realm.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Realm.framework; sourceTree = "<group>"; };
+		58C1A7CF1E54382800B64413 /* paymentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentTableViewCell.swift; sourceTree = "<group>"; };
+		58C1A7DF1E55A6BA00B64413 /* MyOrderList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderList.swift; sourceTree = "<group>"; };
+		58C1A7E11E55AA4600B64413 /* DbQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbQuery.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		586524021E51872200E3E79C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				58C1A79F1E540E7900B64413 /* Realm.framework in Frameworks */,
+				58C1A79C1E540E4B00B64413 /* Realm.framework in Frameworks */,
+				58C1A79B1E540E4B00B64413 /* RealmSwift.framework in Frameworks */,
+				58C1A79D1E540E7900B64413 /* RealmSwift.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586524161E51872200E3E79C /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		586523FC1E51872200E3E79C = {
+			isa = PBXGroup;
+			children = (
+				586524071E51872200E3E79C /* CouponBellClient */,
+				5865241C1E51872200E3E79C /* CouponBellClientTests */,
+				586524061E51872200E3E79C /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		586524061E51872200E3E79C /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				586524051E51872200E3E79C /* CouponBellClient.app */,
+				586524191E51872200E3E79C /* CouponBellClientTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		586524071E51872200E3E79C /* CouponBellClient */ = {
+			isa = PBXGroup;
+			children = (
+				586524081E51872200E3E79C /* AppDelegate.swift */,
+				58C1A7DC1E55A64F00B64413 /* Controller */,
+				58C1A7DE1E55A68A00B64413 /* Model */,
+				58C1A7DD1E55A67500B64413 /* View */,
+				5865240C1E51872200E3E79C /* Main.storyboard */,
+				5865240F1E51872200E3E79C /* Assets.xcassets */,
+				586524111E51872200E3E79C /* LaunchScreen.storyboard */,
+				586524141E51872200E3E79C /* Info.plist */,
+				58C1A7991E540E4B00B64413 /* RealmSwift.framework */,
+				58C1A79A1E540E4B00B64413 /* Realm.framework */,
+			);
+			path = CouponBellClient;
+			sourceTree = "<group>";
+		};
+		5865241C1E51872200E3E79C /* CouponBellClientTests */ = {
+			isa = PBXGroup;
+			children = (
+				5865241D1E51872200E3E79C /* CouponBellClientTests.swift */,
+				5865241F1E51872200E3E79C /* Info.plist */,
+			);
+			path = CouponBellClientTests;
+			sourceTree = "<group>";
+		};
+		58C1A7DC1E55A64F00B64413 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				586524381E51950F00E3E79C /* MenuTableViewController.swift */,
+				5865240A1E51872200E3E79C /* paymentTableViewController.swift */,
+				586524341E5192C200E3E79C /* CartTableViewController.swift */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		58C1A7DD1E55A67500B64413 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				5865243A1E51955500E3E79C /* MenuTableViewCell.swift */,
+				58C1A7CF1E54382800B64413 /* paymentTableViewCell.swift */,
+				586524361E5192FF00E3E79C /* CartTableViewCell.swift */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		58C1A7DE1E55A68A00B64413 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				5865242E1E518B4600E3E79C /* Menu.swift */,
+				58C1A7DF1E55A6BA00B64413 /* MyOrderList.swift */,
+				58C1A7E11E55AA4600B64413 /* DbQuery.swift */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		586524041E51872200E3E79C /* CouponBellClient */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586524221E51872200E3E79C /* Build configuration list for PBXNativeTarget "CouponBellClient" */;
+			buildPhases = (
+				586524011E51872200E3E79C /* Sources */,
+				586524021E51872200E3E79C /* Frameworks */,
+				586524031E51872200E3E79C /* Resources */,
+				58C1A7A11E540E7900B64413 /* Embed Frameworks */,
+				58C1A7A21E540EAB00B64413 /* ShellScript */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CouponBellClient;
+			productName = CouponBellClient;
+			productReference = 586524051E51872200E3E79C /* CouponBellClient.app */;
+			productType = "com.apple.product-type.application";
+		};
+		586524181E51872200E3E79C /* CouponBellClientTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 586524251E51872200E3E79C /* Build configuration list for PBXNativeTarget "CouponBellClientTests" */;
+			buildPhases = (
+				586524151E51872200E3E79C /* Sources */,
+				586524161E51872200E3E79C /* Frameworks */,
+				586524171E51872200E3E79C /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				5865241B1E51872200E3E79C /* PBXTargetDependency */,
+			);
+			name = CouponBellClientTests;
+			productName = CouponBellClientTests;
+			productReference = 586524191E51872200E3E79C /* CouponBellClientTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		586523FD1E51872200E3E79C /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0820;
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = BoostCamp;
+				TargetAttributes = {
+					586524041E51872200E3E79C = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = LHA4V9P7V8;
+						ProvisioningStyle = Automatic;
+					};
+					586524181E51872200E3E79C = {
+						CreatedOnToolsVersion = 8.2.1;
+						ProvisioningStyle = Automatic;
+						TestTargetID = 586524041E51872200E3E79C;
+					};
+				};
+			};
+			buildConfigurationList = 586524001E51872200E3E79C /* Build configuration list for PBXProject "CouponBellClient" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 586523FC1E51872200E3E79C;
+			productRefGroup = 586524061E51872200E3E79C /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				586524041E51872200E3E79C /* CouponBellClient */,
+				586524181E51872200E3E79C /* CouponBellClientTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		586524031E51872200E3E79C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586524131E51872200E3E79C /* LaunchScreen.storyboard in Resources */,
+				586524101E51872200E3E79C /* Assets.xcassets in Resources */,
+				5865240E1E51872200E3E79C /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586524171E51872200E3E79C /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		58C1A7A21E540EAB00B64413 /* ShellScript */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"$(SRCROOT)/Carthage/Build/iOS/Realm.framework",
+				"$(SRCROOT)/Carthage/Build/iOS/RealmSwift.framework",
+			);
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		586524011E51872200E3E79C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				586524371E5192FF00E3E79C /* CartTableViewCell.swift in Sources */,
+				586524391E51950F00E3E79C /* MenuTableViewController.swift in Sources */,
+				5865243B1E51955500E3E79C /* MenuTableViewCell.swift in Sources */,
+				586524311E518B4600E3E79C /* Menu.swift in Sources */,
+				58C1A7E01E55A6BA00B64413 /* MyOrderList.swift in Sources */,
+				5865240B1E51872200E3E79C /* paymentTableViewController.swift in Sources */,
+				58C1A7E21E55AA4600B64413 /* DbQuery.swift in Sources */,
+				586524351E5192C200E3E79C /* CartTableViewController.swift in Sources */,
+				58C1A7D01E54382800B64413 /* paymentTableViewCell.swift in Sources */,
+				586524091E51872200E3E79C /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		586524151E51872200E3E79C /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				5865241E1E51872200E3E79C /* CouponBellClientTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		5865241B1E51872200E3E79C /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 586524041E51872200E3E79C /* CouponBellClient */;
+			targetProxy = 5865241A1E51872200E3E79C /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		5865240C1E51872200E3E79C /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5865240D1E51872200E3E79C /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		586524111E51872200E3E79C /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				586524121E51872200E3E79C /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		586524201E51872200E3E79C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		586524211E51872200E3E79C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		586524231E51872200E3E79C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LHA4V9P7V8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CouponBellClient",
+				);
+				INFOPLIST_FILE = CouponBellClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BoostCamp.CouponBellClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Debug;
+		};
+		586524241E51872200E3E79C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = LHA4V9P7V8;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/CouponBellClient",
+				);
+				INFOPLIST_FILE = CouponBellClient/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BoostCamp.CouponBellClient;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+			};
+			name = Release;
+		};
+		586524261E51872200E3E79C /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CouponBellClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BoostCamp.CouponBellClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CouponBellClient.app/CouponBellClient";
+			};
+			name = Debug;
+		};
+		586524271E51872200E3E79C /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				INFOPLIST_FILE = CouponBellClientTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.BoostCamp.CouponBellClientTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CouponBellClient.app/CouponBellClient";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		586524001E51872200E3E79C /* Build configuration list for PBXProject "CouponBellClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586524201E51872200E3E79C /* Debug */,
+				586524211E51872200E3E79C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586524221E51872200E3E79C /* Build configuration list for PBXNativeTarget "CouponBellClient" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586524231E51872200E3E79C /* Debug */,
+				586524241E51872200E3E79C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		586524251E51872200E3E79C /* Build configuration list for PBXNativeTarget "CouponBellClientTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				586524261E51872200E3E79C /* Debug */,
+				586524271E51872200E3E79C /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 586523FD1E51872200E3E79C /* Project object */;
+}
