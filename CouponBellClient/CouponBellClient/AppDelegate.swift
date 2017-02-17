@@ -196,9 +196,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         }
     }
     
-    func sendJSONMessage(orderListDic: Dictionary<String, Int>){
-        //dict부분에 주문정보 추가해서 집어넣기
-        let dict : [String:AnyObject] = ["key1":"value1" as AnyObject, "key2":"value2" as AnyObject, "key3":["a","b","c"] as AnyObject, "key4":0 as AnyObject]
+    func sendJSONMessage(orderListDic: Dictionary<String, Int>) -> Bool{
         
         do {
             
@@ -228,10 +226,15 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
                 print("Operation failed: \(socket?.outputStream?.streamError)")
             } else {
                 print("The number of bytes written is \(result)")
+                for myOrder in myOrderList {
+                    myOrder.quantity = 0
+                }
+                return true
             }
         }catch let error as NSError {
             print(error)
         }
+        return false
     }
 }
 

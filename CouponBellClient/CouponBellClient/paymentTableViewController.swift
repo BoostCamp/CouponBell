@@ -28,7 +28,12 @@ class paymentTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func sendBtn(_ sender: Any) {
-        (UIApplication.shared.delegate as! AppDelegate).sendJSONMessage(orderListDic: orderListDict!)
+        if appDelegate.sendJSONMessage(orderListDic: orderListDict!){
+            dismiss(animated: true, completion: nil)
+        }else{
+            print("다시 시도해보세요")
+        }
+        
     }
 
     override func viewWillAppear(_ animated: Bool) {
@@ -37,7 +42,7 @@ class paymentTableViewController: UIViewController, UITableViewDelegate, UITable
             if myOrder.quantity > 0 {
                 haveToPay.append(myOrder)
                 totalPrice += (haveToPay.last?.quantity)! * (haveToPay.last?.price)!
-                orderListDict?["\(haveToPay.last?.product)"] = haveToPay.last?.quantity
+                orderListDict?["\((haveToPay.last?.product)!)"] = haveToPay.last?.quantity
             }
         }
         totalPriceLabel.text = String(totalPrice)
