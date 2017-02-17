@@ -195,5 +195,43 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
             print("The number of bytes written is \(result)")
         }
     }
+    
+    func sendJSONMessage(orderListDic: Dictionary<String, Int>){
+        //dict부분에 주문정보 추가해서 집어넣기
+        let dict : [String:AnyObject] = ["key1":"value1" as AnyObject, "key2":"value2" as AnyObject, "key3":["a","b","c"] as AnyObject, "key4":0 as AnyObject]
+        
+        do {
+            
+            let clientName : [String : String  ] = [ "ClientName" : "클라이언트 이름"]
+            let orderListDicDic    : [String : AnyObject] = ["OrderList" : orderListDic as AnyObject]
+            let temp = NSMutableDictionary(dictionary: orderListDicDic)
+            temp.addEntries(from: clientName);
+            
+            let jsonData = try JSONSerialization.data(withJSONObject: temp, options: .prettyPrinted)
+            
+            
+            let data = jsonData as Data?
+            print("\(socket?.outputStream) ==> Pass JSON Data : \(temp)")
+            
+            socket?.outputStream?.open()
+            
+            defer {
+                print("Output Stream Close")
+                //outputStream.close()
+            }
+            
+            let result = data?.withUnsafeBytes {socket?.outputStream?.write($0, maxLength: (data?.count)!) }
+            
+            if result == 0 {
+                print("Stream at capacity")
+            } else if result == -1 {
+                print("Operation failed: \(socket?.outputStream?.streamError)")
+            } else {
+                print("The number of bytes written is \(result)")
+            }
+        }catch let error as NSError {
+            print(error)
+        }
+    }
 }
 

@@ -18,7 +18,9 @@ class paymentTableViewController: UIViewController, UITableViewDelegate, UITable
     var allMenus: Results<Menu>?
     var totalPrice = 0
     var haveToPay = [MyOrderList]()
+    var orderListDict: Dictionary<String, Int>?
 
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,19 +28,23 @@ class paymentTableViewController: UIViewController, UITableViewDelegate, UITable
     }
     
     @IBAction func sendBtn(_ sender: Any) {
-        (UIApplication.shared.delegate as! AppDelegate).sendMessage(msg: "abcdefg")
+        (UIApplication.shared.delegate as! AppDelegate).sendJSONMessage(orderListDic: orderListDict!)
     }
+
     override func viewWillAppear(_ animated: Bool) {
+        orderListDict = Dictionary()
         for myOrder in appDelegate.myOrderList{
             if myOrder.quantity > 0 {
                 haveToPay.append(myOrder)
                 totalPrice += (haveToPay.last?.quantity)! * (haveToPay.last?.price)!
+                orderListDict?["\(haveToPay.last?.product)"] = haveToPay.last?.quantity
             }
         }
         totalPriceLabel.text = String(totalPrice)
         tableView.reloadData()
     }
 
+        
     @IBAction func goBackBtn(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
