@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		58252FE81E5722CF0023F47B /* ConnectedClientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58252FE71E5722CF0023F47B /* ConnectedClientTableViewController.swift */; };
+		58252FEA1E5724EC0023F47B /* ConnectedClientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58252FE91E5724EC0023F47B /* ConnectedClientTableViewCell.swift */; };
+		58252FEC1E5728F10023F47B /* ConnectedMember.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58252FEB1E5728F10023F47B /* ConnectedMember.swift */; };
 		5852EFB71E484F58005D3F75 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5852EFB61E484F58005D3F75 /* AppDelegate.swift */; };
 		5852EFBC1E484F58005D3F75 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5852EFBA1E484F58005D3F75 /* Main.storyboard */; };
 		5852EFBE1E484F58005D3F75 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5852EFBD1E484F58005D3F75 /* Assets.xcassets */; };
@@ -39,6 +42,9 @@
 /* Begin PBXFileReference section */
 		09C4FF95F0270CBFF2B78D3A /* Pods-CouponBell.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponBell.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouponBell/Pods-CouponBell.release.xcconfig"; sourceTree = "<group>"; };
 		581D2F0A186B3827D74756C4 /* Pods-CouponBellTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponBellTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouponBellTests/Pods-CouponBellTests.debug.xcconfig"; sourceTree = "<group>"; };
+		58252FE71E5722CF0023F47B /* ConnectedClientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedClientTableViewController.swift; sourceTree = "<group>"; };
+		58252FE91E5724EC0023F47B /* ConnectedClientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedClientTableViewCell.swift; sourceTree = "<group>"; };
+		58252FEB1E5728F10023F47B /* ConnectedMember.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ConnectedMember.swift; sourceTree = "<group>"; };
 		5852EFB31E484F58005D3F75 /* CouponBell.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponBell.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5852EFB61E484F58005D3F75 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5852EFBB1E484F58005D3F75 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -154,6 +160,7 @@
 			children = (
 				58E21A761E4AD7C2004C6A5A /* OrderInfo.swift */,
 				58C1A7DA1E55963A00B64413 /* CompleteList.swift */,
+				58252FEB1E5728F10023F47B /* ConnectedMember.swift */,
 				58C1A7D61E55480600B64413 /* Menu.swift */,
 				58C1A7D81E558F6D00B64413 /* DbQuery.swift */,
 			);
@@ -165,6 +172,7 @@
 			children = (
 				5852EFD61E4855F4005D3F75 /* OrderInfoTableViewCell.swift */,
 				586A011D1E49ADAA00771195 /* MenuTableViewCell.swift */,
+				58252FE91E5724EC0023F47B /* ConnectedClientTableViewCell.swift */,
 			);
 			name = View;
 			sourceTree = "<group>";
@@ -173,8 +181,9 @@
 			isa = PBXGroup;
 			children = (
 				58E21A721E4AA98B004C6A5A /* OrderInfoTableViewController.swift */,
-				5852EFD81E485C2F005D3F75 /* CouponBellDetailViewController.swift */,
 				586A011F1E49AED400771195 /* MenuTableViewController.swift */,
+				58252FE71E5722CF0023F47B /* ConnectedClientTableViewController.swift */,
+				5852EFD81E485C2F005D3F75 /* CouponBellDetailViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -383,14 +392,17 @@
 			buildActionMask = 2147483647;
 			files = (
 				5852EFD91E485C2F005D3F75 /* CouponBellDetailViewController.swift in Sources */,
+				58252FEC1E5728F10023F47B /* ConnectedMember.swift in Sources */,
 				58C1A7D91E558F6D00B64413 /* DbQuery.swift in Sources */,
 				58C1A7DB1E55963A00B64413 /* CompleteList.swift in Sources */,
 				58E21A771E4AD7C2004C6A5A /* OrderInfo.swift in Sources */,
 				586A011E1E49ADAA00771195 /* MenuTableViewCell.swift in Sources */,
 				58C1A7D71E55480600B64413 /* Menu.swift in Sources */,
+				58252FEA1E5724EC0023F47B /* ConnectedClientTableViewCell.swift in Sources */,
 				58E21A731E4AA98B004C6A5A /* OrderInfoTableViewController.swift in Sources */,
 				58C1A7D21E54425B00B64413 /* Socket.swift in Sources */,
 				586A01201E49AED400771195 /* MenuTableViewController.swift in Sources */,
+				58252FE81E5722CF0023F47B /* ConnectedClientTableViewController.swift in Sources */,
 				5852EFD71E4855F4005D3F75 /* OrderInfoTableViewCell.swift in Sources */,
 				5852EFB71E484F58005D3F75 /* AppDelegate.swift in Sources */,
 			);

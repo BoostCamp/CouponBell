@@ -30,7 +30,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="60"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bxY-0J-6Qi" id="lvK-5r-gHH">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="59"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="60"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="메뉴 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rqm-sP-evf">
@@ -177,7 +177,7 @@
                                                 <rect key="frame" x="0.0" y="28" width="343" height="44"/>
                                                 <autoresizingMask key="autoresizingMask"/>
                                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ALl-ub-0Ox" id="Khq-UO-e2m">
-                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="43"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="343" height="44"/>
                                                     <autoresizingMask key="autoresizingMask"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="아메리카노" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eyN-5Z-N7o">
@@ -302,7 +302,7 @@
                                         <rect key="frame" x="0.0" y="28" width="375" height="67"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="OLc-JB-q3O" id="xDV-1s-poC">
-                                            <rect key="frame" x="0.0" y="0.0" width="375" height="66"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="67"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="음료 : " textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4Iz-F4-iJK">
@@ -424,7 +424,7 @@
                                 <rect key="frame" x="0.0" y="28" width="375" height="100"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="VUC-J8-dNC" id="eWd-Fy-pG8">
-                                    <rect key="frame" x="0.0" y="0.0" width="375" height="99"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="100"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rIg-Dw-tb7">
@@ -564,7 +564,7 @@
         <!--연결 상태-->
         <scene sceneID="MgM-f6-9UG">
             <objects>
-                <viewController id="93q-xL-CBC" sceneMemberID="viewController">
+                <viewController id="93q-xL-CBC" customClass="ConnectedClientTableViewController" customModule="CouponBell" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="ax8-P4-kF3"/>
                         <viewControllerLayoutGuide type="bottom" id="KYR-gM-cZU"/>
@@ -573,16 +573,78 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvG-Iy-Joq">
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="qvG-Iy-Joq">
                                 <rect key="frame" x="0.0" y="72" width="375" height="546"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="ConnectedClientTableViewCell" id="evD-OB-hxv" customClass="ConnectedClientTableViewCell" customModule="CouponBell" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="evD-OB-hxv" id="A2U-rA-7mN">
+                                            <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="이름 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cwX-Kc-Kng">
+                                                    <rect key="frame" x="13" y="6" width="39" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="사용자 이름" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="t8K-Fl-3Hi">
+                                                    <rect key="frame" x="60" y="6" width="78" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="상태 :" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="n0G-t3-uGp">
+                                                    <rect key="frame" x="256" y="6" width="39" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="연결 여부" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="yR9-Ay-VYT">
+                                                    <rect key="frame" x="303" y="6" width="64" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="t8K-Fl-3Hi" firstAttribute="top" secondItem="A2U-rA-7mN" secondAttribute="top" constant="6" id="CzQ-lc-eUT"/>
+                                                <constraint firstItem="cwX-Kc-Kng" firstAttribute="top" secondItem="A2U-rA-7mN" secondAttribute="top" constant="6" id="GFJ-Kh-7zQ"/>
+                                                <constraint firstAttribute="trailing" secondItem="yR9-Ay-VYT" secondAttribute="trailing" constant="8" id="Zco-SW-ed7"/>
+                                                <constraint firstItem="t8K-Fl-3Hi" firstAttribute="leading" secondItem="cwX-Kc-Kng" secondAttribute="trailing" constant="8" id="b8B-BD-cRb"/>
+                                                <constraint firstItem="cwX-Kc-Kng" firstAttribute="leading" secondItem="A2U-rA-7mN" secondAttribute="leading" constant="13" id="fNf-kv-yZy"/>
+                                                <constraint firstItem="n0G-t3-uGp" firstAttribute="top" secondItem="A2U-rA-7mN" secondAttribute="top" constant="6" id="w8I-h8-HzF"/>
+                                                <constraint firstItem="yR9-Ay-VYT" firstAttribute="top" secondItem="A2U-rA-7mN" secondAttribute="top" constant="6" id="ws2-5T-F9h"/>
+                                                <constraint firstItem="yR9-Ay-VYT" firstAttribute="leading" secondItem="n0G-t3-uGp" secondAttribute="trailing" constant="8" id="wxV-S2-18h"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="isConnectedLabel" destination="yR9-Ay-VYT" id="kr5-qh-VMA"/>
+                                            <outlet property="userNameLabel" destination="t8K-Fl-3Hi" id="s3l-eI-gHh"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                                <connections>
+                                    <outlet property="dataSource" destination="93q-xL-CBC" id="SYh-Kh-ivn"/>
+                                    <outlet property="delegate" destination="93q-xL-CBC" id="iF6-fQ-POx"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="qvG-Iy-Joq" secondAttribute="trailing" id="1p0-v0-z3N"/>
+                            <constraint firstItem="KYR-gM-cZU" firstAttribute="top" secondItem="qvG-Iy-Joq" secondAttribute="bottom" id="Lua-Hk-RNh"/>
+                            <constraint firstItem="qvG-Iy-Joq" firstAttribute="leading" secondItem="xO7-fM-OHg" secondAttribute="leading" id="b4V-xX-4Oj"/>
+                            <constraint firstItem="qvG-Iy-Joq" firstAttribute="top" secondItem="ax8-P4-kF3" secondAttribute="bottom" constant="8" id="uPg-uh-uQF"/>
+                        </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="연결 상태" id="xXa-Ko-aPW"/>
                     <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <connections>
+                        <outlet property="tableView" destination="qvG-Iy-Joq" id="EYA-kq-3oV"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gQd-UO-FGl" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

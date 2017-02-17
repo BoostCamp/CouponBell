@@ -9,12 +9,13 @@
 import UIKit
 
 @UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceDelegate, StreamDelegate {
+class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceDelegate, NetServiceBrowserDelegate, StreamDelegate {
 
     var window: UIWindow?
     var server: NetService!
     var socket = [Socket]()
-    
+    var connectedClients = [ConnectedClient]()
+    var browser: NetServiceBrowser!
     var inStream: InputStream?
     var outStream: OutputStream?
     
@@ -22,8 +23,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceDelegate, Strea
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         
-        // Create and advertise our server.  We only want the service to be registered on
-        // local networks so we pass in the "local." domain.
+        //setting brower for browsing Client service
+        self.browser = NetServiceBrowser()
+        self.browser.includesPeerToPeer = true
+        browser.delegate = self
+        browser.searchForServices(ofType: "_test._tcp", inDomain: "local")
         
         //publish service for server
         server = NetService.init(domain: "local", type: "_test._tcp", name: "CouponBellServer", port: 3000)
@@ -58,6 +62,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceDelegate, Strea
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+    
+    // MARK: Stream Delegate - START
+    
     func stream(_ aStream: Stream, handle eventCode: Stream.Event){
         switch eventCode{
         case Stream.Event.errorOccurred:
@@ -91,6 +98,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceDelegate, Strea
         }
         
     }
+    
+    // StreamDelegate - End
+    
+    
+    // MARK: NetServiceDelegate - START
     
     func netServiceWillPublish(_ sender: NetService) {
         print("netServiceWillPublish \(sender)")
@@ -139,15 +151,57 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceDelegate, Strea
         self.inStream?.open()
         self.outStream?.open()
         
-        
+        //in, out stream 체크
         print(server.getInputStream(&inStream, outputStream: &outStream))
-//        sendMessage(msg: "ABCDE")
+        //        sendMessage(msg: "ABCDE")
         
     }
     
     func netServiceDidStop(_ sender: NetService) {
         print("netServiceDidStop : \(sender)")
     }
+    
+    //NetServiceDelegate - END
+    
+    
+    
+    // MARK : NetServiceBrowser Delegate - START
+    
+    func netServiceBrowserWillSearch(_ browser: NetServiceBrowser) {
+        print("netServiceBrowserWillSearch")
+    }
+    
+    func netServiceBrowserDidStopSearch(_ browser: NetServiceBrowser) {
+        print("netServiceBrowserDidStopSearch")
+    }
+    
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool){
+        print("findservice")
+// 실제 실행할 때는 주석 해제할것
+//        if service.name != "CouponBellServer" {
+            connectedClients.append(ConnectedClient(client: service))
+            updateInterface()
+//        }
+    }
+    
+    func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
+        print("\(service) was removed")
+    }
+    
+    func netServiceBrowser(_ browser: NetServiceBrowser, didNotSearch errorDict: [String : NSNumber]) {
+        print("netServiceBrowser didNotSearch Error \(errorDict)")
+    }
+    
+    func netServiceBrowser(_ browser: NetServiceBrowser, didFindDomain domainString: String, moreComing: Bool) {
+        print("netServiceBrowser didFindDomain Domain : \(domainString)")
+    }
+    
+    func netServiceBrowser(_ browser: NetServiceBrowser, didRemoveDomain domainString: String, moreComing: Bool) {
+        print("netServiceBrowser didRemoveDomain Domain : \(domainString)")
+    }
+    
+    // NetServiceBrowser Delegate - END
+    
     
     
     func sendMessage(msg: String){
