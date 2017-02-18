@@ -14,6 +14,7 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
     @IBOutlet weak var tableView: UITableView!
     var orderInfos: Results<OrderInfo>?
     var dbQuery = DbQuery()
+    var selectedIndex = -1
     
     @IBOutlet weak var sendBtn: UIBarButtonItem!
     @IBAction func sendBtn(_ sender: Any) {
@@ -52,6 +53,10 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
         cell.userOrderDateLabel.text = String(describing: item!.orderedDate)
         cell.userOrderNumberLabel.text = String(describing: item!.count)
         
+        print(cell.tableView.frame)
+        cell.tableView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
+
+        
         return cell
     }
     
@@ -87,6 +92,33 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
         notifyAction.backgroundColor = UIColor.brown
         
         return [notifyAction]
+    }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        if selectedIndex == indexPath.row {
+            return 200
+        }else{
+            return 60
+        }
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        var indexPaths = [IndexPath]()
+        let cell = tableView.cellForRow(at: indexPath) as! OrderInfoTableViewCell
+        if selectedIndex != -1 {
+            indexPaths.append(IndexPath(row:selectedIndex, section: 0))
+            
+        }
+        indexPaths.append(indexPath)
+        
+        if selectedIndex == indexPath.row {
+            selectedIndex = -1
+            //또 클릭했을 때~~
+            
+        }else{
+            selectedIndex = indexPath.row
+        }
+        self.tableView.reloadRows(at: indexPaths, with: UITableViewRowAnimation.automatic)//data 바뀌었을 때..
     }
     
 //    func addToOrderInfoList(count: Int, type: String, menu: String, price: Int, isCompleted: Bool){

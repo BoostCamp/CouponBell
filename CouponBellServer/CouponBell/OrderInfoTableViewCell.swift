@@ -20,6 +20,24 @@ class OrderInfoTableViewCell: UITableViewCell{
     @IBOutlet weak var userOrderNumberLabel: UILabel!
     @IBOutlet weak var orderDateLabel: UILabel!
     @IBOutlet weak var userOrderDateLabel: UILabel!
+    @IBOutlet weak var secondView: UIView!
+    @IBOutlet weak var firstView: UIView!
+    @IBOutlet weak var secondViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewHeightConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableViewConstraint: NSLayoutConstraint!
+    @IBOutlet weak var tableView: UITableView!
     
+    override func awakeFromNib() {
+        super.awakeFromNib()
+    }
     
+    override func setSelected(_ selected: Bool, animated: Bool) {
+        super.setSelected(selected, animated: animated)
+    }
+    
+    var showDetails = false{
+        didSet{
+            secondViewHeightConstraint.priority = showDetails ? 250 : 999
+        }
+    }
 }
