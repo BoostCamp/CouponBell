@@ -15,14 +15,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
     var myOrderList = [MyOrderList]()
     var browser: NetServiceBrowser!
     var server: NetService!
+    var client: NetService!
     let socket: Socket? = Socket()
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
+        
+        //setting browser to browsing Server service
         self.browser = NetServiceBrowser()
         self.browser.includesPeerToPeer = true
         browser.delegate = self
         browser.searchForServices(ofType: "_test._tcp", inDomain: "local")
+        
+        //publish service for client
+        client = NetService.init(domain: "local", type: "_test._tcp", name: "JanghoHan", port: 3000)
+        client.includesPeerToPeer = true
+        client.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
+        client.delegate = self
+        client.publish(options: .listenForConnections)
         return true
     }
 
@@ -110,8 +120,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool){
         print("netservicebrowser didfind service")
-        server = service
-        updateInterface()
+        if service.name == "CouponBellServer"{
+            
+            server = service
+            updateInterface()
+        }
         
     }
     
