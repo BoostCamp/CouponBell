@@ -23,6 +23,7 @@
 		58C1A7D71E55480600B64413 /* Menu.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7D61E55480600B64413 /* Menu.swift */; };
 		58C1A7D91E558F6D00B64413 /* DbQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7D81E558F6D00B64413 /* DbQuery.swift */; };
 		58C1A7DB1E55963A00B64413 /* CompleteList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7DA1E55963A00B64413 /* CompleteList.swift */; };
+		58C2D3DF1E583BE100FCA6EF /* MyNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2D3DE1E583BE100FCA6EF /* MyNetwork.swift */; };
 		58E21A731E4AA98B004C6A5A /* OrderInfoTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E21A721E4AA98B004C6A5A /* OrderInfoTableViewController.swift */; };
 		58E21A771E4AD7C2004C6A5A /* OrderInfo.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58E21A761E4AD7C2004C6A5A /* OrderInfo.swift */; };
 		6870EA4EEFD40D76B221F499 /* Pods_CouponBell.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E55805731856F9F2ACCEC6AE /* Pods_CouponBell.framework */; };
@@ -62,6 +63,7 @@
 		58C1A7D61E55480600B64413 /* Menu.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Menu.swift; sourceTree = "<group>"; };
 		58C1A7D81E558F6D00B64413 /* DbQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbQuery.swift; sourceTree = "<group>"; };
 		58C1A7DA1E55963A00B64413 /* CompleteList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CompleteList.swift; sourceTree = "<group>"; };
+		58C2D3DE1E583BE100FCA6EF /* MyNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetwork.swift; sourceTree = "<group>"; };
 		58E21A721E4AA98B004C6A5A /* OrderInfoTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfoTableViewController.swift; sourceTree = "<group>"; };
 		58E21A761E4AD7C2004C6A5A /* OrderInfo.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = OrderInfo.swift; sourceTree = "<group>"; };
 		5DFB29ACB677B07F8293E7A5 /* Pods-CouponBell.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponBell.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouponBell/Pods-CouponBell.debug.xcconfig"; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				58252FEB1E5728F10023F47B /* ConnectedMember.swift */,
 				58C1A7D61E55480600B64413 /* Menu.swift */,
 				58C1A7D81E558F6D00B64413 /* DbQuery.swift */,
+				58C2D3DE1E583BE100FCA6EF /* MyNetwork.swift */,
 			);
 			name = Model;
 			sourceTree = "<group>";
@@ -397,6 +400,7 @@
 				58C1A7DB1E55963A00B64413 /* CompleteList.swift in Sources */,
 				58E21A771E4AD7C2004C6A5A /* OrderInfo.swift in Sources */,
 				586A011E1E49ADAA00771195 /* MenuTableViewCell.swift in Sources */,
+				58C2D3DF1E583BE100FCA6EF /* MyNetwork.swift in Sources */,
 				58C1A7D71E55480600B64413 /* Menu.swift in Sources */,
 				58252FEA1E5724EC0023F47B /* ConnectedClientTableViewCell.swift in Sources */,
 				58E21A731E4AA98B004C6A5A /* OrderInfoTableViewController.swift in Sources */,

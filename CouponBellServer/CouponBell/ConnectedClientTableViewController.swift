@@ -14,14 +14,13 @@ class ConnectedClientTableViewController: UIViewController, UITableViewDataSourc
     @IBOutlet weak var tableView: UITableView!
     
     var connectedClients = [ConnectedClient]()
-    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     override func viewDidLoad(){
         super.viewDidLoad()
     }
 
     override func viewWillAppear(_ animated: Bool) {
-        connectedClients = appDelegate.connectedClients
+        connectedClients = MyNetwork.sharedInstance().connectedClients
     }
     
     

@@ -9,17 +9,30 @@
 import UIKit
 import RealmSwift
 
-class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
+class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StreamDelegate{
     
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var sendBtn: UIBarButtonItem!
+    
     var orderInfos: Results<OrderInfo>?
     var dbQuery = DbQuery()
     var selectedIndex = -1
+    var myNetwork: MyNetwork?
     
-    @IBOutlet weak var sendBtn: UIBarButtonItem!
+   
     @IBAction func sendBtn(_ sender: Any) {
-        (UIApplication.shared.delegate as! AppDelegate).sendMessage(msg: "abcde")
+//        (UIApplication.shared.delegate as! AppDelegate).sendMessage(msg: "abcde")
     }
+    
+    // MARK: View Life Cycle - START
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+
+        myNetwork = MyNetwork.sharedInstance()
+        myNetwork?.publishService()
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         //db에 저장된 정보들 불러오기
         if self.restorationIdentifier == "preparing"{
@@ -27,10 +40,15 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
         }else{
             orderInfos = dbQuery.getFromOrderInfoList(isCompleted: true)
         }
-        
+
+        myNetwork?.searchService()
+
         //전체 데이터 다 다시읽기
         tableView.reloadData()
     }
+    
+    // View Life Cycle - END
+
     
     // MARK: 테이블뷰 설정
     
@@ -53,7 +71,7 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
         cell.userOrderDateLabel.text = String(describing: item!.orderedDate)
         cell.userOrderNumberLabel.text = String(describing: item!.count)
         
-        print(cell.tableView.frame)
+//        print(cell.tableView.frame)
         cell.tableView.frame = CGRect(x: 0, y: 0, width: 0, height: 0)
 
         
@@ -98,7 +116,7 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
         if selectedIndex == indexPath.row {
             return 200
         }else{
-            return 60
+            return 200
         }
     }
     
@@ -121,30 +139,56 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
         self.tableView.reloadRows(at: indexPaths, with: UITableViewRowAnimation.automatic)//data 바뀌었을 때..
     }
     
-//    func addToOrderInfoList(count: Int, type: String, menu: String, price: Int, isCompleted: Bool){
-//        let realm = try! Realm()
-//        let orderInfo = OrderInfo()
-//        orderInfo.count = count
-//        orderInfo.type = type
-//        orderInfo.menu = menu
-//        orderInfo.orderedDate = NSDate()
-//        orderInfo.isCompleted = false
-//        try! realm.write{
-//            realm.add(orderInfo)
-//            print("add succeed")
-//        }
-//    }
     
-//    func getFromOrderInfoList(identifier: String) -> Results<OrderInfo>{
-//        let realm = try! Realm()
-//        
-//        let allLists = realm.objects(OrderInfo.self)
-//        if identifier == "preparing" {
-//            return allLists.filter("isCompleted == false")
-//        }else{
-//            return allLists.filter("isCompleted == true")
-//        }
-//    }
+    // MARK: Stream Delegate - START
+    
+    func stream(_ aStream: Stream, handle eventCode: Stream.Event){
+        switch eventCode{
+        case Stream.Event.errorOccurred:
+            print("ErrorOccurred")
+        case Stream.Event.openCompleted:
+            print("stream opened")
+        case Stream.Event.hasBytesAvailable:
+            print("HasBytesAvailable")
+            var buffer = [UInt8](repeating:0, count:4096)
+            
+            let inputStream = aStream as? InputStream
+            
+            
+            //통신타입 - 메뉴요청 혹은 주문. 각각 해당하는 컨트롤러
+            while ((inputStream?.hasBytesAvailable) != false){
+                do{
+                    let parsedData = try JSONSerialization.jsonObject(with: inputStream!, options: []) as! [String:Any]
+                    print("parsedData!!!!!!!!!!!!!!!!!!!!!!!!!")
+                    print(parsedData)
+                    rcvData = parsedData
+                    print("rcvdata : ")
+                    print(self.rcvData)
+                    
+                } catch let error {
+                    print("errorerorewfewoeroero")
+                    print(error.localizedDescription)
+                }
+                //server쪽에 accept쪽 delegate
+                let len = inputStream?.read(&buffer, maxLength: buffer.count)
+                if(len! > 0){
+                    let input = NSString(bytes: &buffer, length: buffer.count, encoding: String.Encoding.utf8.rawValue)
+                    if (input != ""){
+                        NSLog("Server Received : %@", input!)
+                    }
+                }else{
+                    break
+                }
+            }
+            break
+        case Stream.Event.hasSpaceAvailable:
+            print("HasSpaceAvailable")
+        default:
+            break
+        }
+    }
+    
+    // StreamDelegate - End
 }
 
 
