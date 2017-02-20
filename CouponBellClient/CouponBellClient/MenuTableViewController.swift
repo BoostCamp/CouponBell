@@ -37,9 +37,12 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
 ///////////////////////////////////////////////////////////////////////////////////////
         
         super.viewDidLoad()
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        
+
         allMenus = dbQuery.getAllMenu()
         for menu in allMenus!{
             appDelegate.myOrderList.append(MyOrderList(type: menu.type, product: menu.product, price: menu.price))
@@ -49,6 +52,12 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
         myNetwork.searchService()
         
         tableView.reloadData()//전체 데이터 다 다시읽기
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        if UserDefaults.standard.string(forKey: "ClientName") == nil {
+            performSegue(withIdentifier: "getUserName", sender: nil)
+        }
     }
     
 

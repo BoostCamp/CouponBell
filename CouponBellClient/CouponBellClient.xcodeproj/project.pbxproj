@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		58252FE61E55FB890023F47B /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58252FE51E55FB890023F47B /* Socket.swift */; };
+		5861BCCB1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861BCCA1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift */; };
 		586524091E51872200E3E79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524081E51872200E3E79C /* AppDelegate.swift */; };
 		5865240B1E51872200E3E79C /* paymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865240A1E51872200E3E79C /* paymentTableViewController.swift */; };
 		5865240E1E51872200E3E79C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5865240C1E51872200E3E79C /* Main.storyboard */; };
@@ -59,6 +60,7 @@
 
 /* Begin PBXFileReference section */
 		58252FE51E55FB890023F47B /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
+		5861BCCA1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserNameViewController.swift; sourceTree = "<group>"; };
 		586524051E51872200E3E79C /* CouponBellClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponBellClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586524081E51872200E3E79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5865240A1E51872200E3E79C /* paymentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentTableViewController.swift; sourceTree = "<group>"; };
@@ -170,6 +172,7 @@
 				586524381E51950F00E3E79C /* MenuTableViewController.swift */,
 				5865240A1E51872200E3E79C /* paymentTableViewController.swift */,
 				586524341E5192C200E3E79C /* CartTableViewController.swift */,
+				5861BCCA1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift */,
 			);
 			name = Controller;
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 				586524351E5192C200E3E79C /* CartTableViewController.swift in Sources */,
 				58C1A7D01E54382800B64413 /* paymentTableViewCell.swift in Sources */,
 				586524091E51872200E3E79C /* AppDelegate.swift in Sources */,
+				5861BCCB1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
