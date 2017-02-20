@@ -10,6 +10,8 @@ target 'CouponBell' do
   # For Swift 3.x
   pod 'RealmSwift'
 
+  pod 'SwiftyJSON'
+
   target 'CouponBellTests' do
     inherit! :search_paths
     # Pods for testing

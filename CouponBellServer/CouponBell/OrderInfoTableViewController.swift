@@ -9,7 +9,7 @@
 import UIKit
 import RealmSwift
 
-class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate, StreamDelegate{
+class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UITableViewDelegate{
     
     @IBOutlet weak var tableView: UITableView!
     @IBOutlet weak var sendBtn: UIBarButtonItem!
@@ -18,6 +18,7 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
     var dbQuery = DbQuery()
     var selectedIndex = -1
     var myNetwork: MyNetwork?
+    var rcvData = [String : Any]()
     
    
     @IBAction func sendBtn(_ sender: Any) {
@@ -45,6 +46,9 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
 
         //전체 데이터 다 다시읽기
         tableView.reloadData()
+        
+        //메시지 받았다는 noti 등록
+        subscribeToOrderRcvd()
     }
     
     // View Life Cycle - END
@@ -140,55 +144,16 @@ class OrderInfoTableViewController: UIViewController, UITableViewDataSource, UIT
     }
     
     
-    // MARK: Stream Delegate - START
-    
-    func stream(_ aStream: Stream, handle eventCode: Stream.Event){
-        switch eventCode{
-        case Stream.Event.errorOccurred:
-            print("ErrorOccurred")
-        case Stream.Event.openCompleted:
-            print("stream opened")
-        case Stream.Event.hasBytesAvailable:
-            print("HasBytesAvailable")
-            var buffer = [UInt8](repeating:0, count:4096)
-            
-            let inputStream = aStream as? InputStream
-            
-            
-            //통신타입 - 메뉴요청 혹은 주문. 각각 해당하는 컨트롤러
-            while ((inputStream?.hasBytesAvailable) != false){
-                do{
-                    let parsedData = try JSONSerialization.jsonObject(with: inputStream!, options: []) as! [String:Any]
-                    print("parsedData!!!!!!!!!!!!!!!!!!!!!!!!!")
-                    print(parsedData)
-                    rcvData = parsedData
-                    print("rcvdata : ")
-                    print(self.rcvData)
-                    
-                } catch let error {
-                    print("errorerorewfewoeroero")
-                    print(error.localizedDescription)
-                }
-                //server쪽에 accept쪽 delegate
-                let len = inputStream?.read(&buffer, maxLength: buffer.count)
-                if(len! > 0){
-                    let input = NSString(bytes: &buffer, length: buffer.count, encoding: String.Encoding.utf8.rawValue)
-                    if (input != ""){
-                        NSLog("Server Received : %@", input!)
-                    }
-                }else{
-                    break
-                }
-            }
-            break
-        case Stream.Event.hasSpaceAvailable:
-            print("HasSpaceAvailable")
-        default:
-            break
-        }
+    func subscribeToOrderRcvd(){
+        NotificationCenter.default.addObserver(self, selector: #selector(addToOrderInfoList), name: NSNotification.Name.rcvdMessage, object: nil)
     }
     
-    // StreamDelegate - End
+    func addToOrderInfoList() {
+        let rcvdMessage = myNetwork?.rcvData
+//        dbQuery.addToOrderInfoList(count: <#T##Int#>, type: <#T##String#>, menu: <#T##String#>, price: <#T##Int#>, isCompleted: <#T##Bool#>)
+        print("received message and notified")
+    }
+
 }
 
 

@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import SwiftyJSON
 
 
 class MyNetwork: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, StreamDelegate {
@@ -98,18 +99,51 @@ class MyNetwork: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Stream
             var buffer = [UInt8](repeating:0, count:4096)
             
             let inputStream = aStream as? InputStream
-            
-            
+
             //통신타입 - 메뉴요청 혹은 주문. 각각 해당하는 컨트롤러
             while ((inputStream?.hasBytesAvailable) != false){
                 do{
+                    inputStream?.read(&buffer, maxLength: buffer.count)
+                    let input = NSString(bytes: &buffer, length: buffer.count, encoding: String.Encoding.utf8.rawValue)
+                    
+                    print(input)
+//Data(buffer: <#T##UnsafeBufferPointer<SourceType>#>)
+//                    let myData = Data(bytes: &buffer)
+//                    let pppdata = try JSONSerialization.jsonObject(with: myData as Data
+//                        , options: []) as! [String:Any]
+//                    print(pppdata)
+                    
+                    if let dataFromString = input?.data(using: String.Encoding.utf8.rawValue) {
+//                        print(dataFromString.base64EncodedString())
+//                        print(dataFromString.base64EncodedData())
+                        let pppdata = try JSONSerialization.jsonObject(with: dataFromString
+                            , options: []) as! [String:Any]
+                        print(pppdata)
+                        let json = JSON(data: dataFromString)
+                        
+                        print(json)
+                    }
+                    
+                    
                     let parsedData = try JSONSerialization.jsonObject(with: inputStream!, options: []) as! [String:Any]
-                    print("parsedData!!!!!!!!!!!!!!!!!!!!!!!!!")
-                    print(parsedData)
                     rcvData = parsedData
                     print("rcvdata : ")
                     print(self.rcvData)
                     
+                    if rcvData["RequestType"] as! String == "Order" {
+                        let data = rcvData["OrderList"]
+                        //주문목롣 db에 전달받은 정보 집어넣기
+                        NotificationCenter.default.post(name: .rcvdMessage, object: nil)
+                    } else if rcvData["RequestTy8pe"] as! String == "Menu" {
+                        //메뉴보내기
+                        let clientName = rcvData["ClientName"] as! String
+                        for connectedClient in connectedClients {
+                            if connectedClient.client.name == clientName {
+                                //메뉴 json형태로 변환해서 메뉴 보내기 구현
+                                sendMessage(msg: "abcd")
+                            }
+                        }
+                    }
                 } catch let error {
                     print("errorerorewfewoeroero")
                     print(error.localizedDescription)
@@ -187,6 +221,7 @@ class MyNetwork: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Stream
         
         //in, out stream 체크
         print(server.getInputStream(&inStream, outputStream: &outStream))
+        print("")
         //        sendMessage(msg: "ABCDE")
         
     }
@@ -212,11 +247,11 @@ class MyNetwork: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Stream
     func netServiceBrowser(_ browser: NetServiceBrowser, didFind service: NetService, moreComing: Bool){
         print("findservice")
         // 실제 실행할 때는 주석 해제할것
-        //        if service.name != "CouponBellServer" {
-        connectedClients.append(ConnectedClient(client: service))
-        self.server = service
-        updateInterface()
-        //        }
+        if service.name != "CouponBellServer" {
+            connectedClients.append(ConnectedClient(client: service))
+            self.server = service
+            updateInterface()
+        }
     }
     
     func netServiceBrowser(_ browser: NetServiceBrowser, didRemove service: NetService, moreComing: Bool) {
@@ -236,4 +271,9 @@ class MyNetwork: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, Stream
     }
     
     // NetServiceBrowser Delegate - END
+}
+
+extension Notification.Name {
+    
+    static let rcvdMessage = Notification.Name("rcvdMessage")
 }
