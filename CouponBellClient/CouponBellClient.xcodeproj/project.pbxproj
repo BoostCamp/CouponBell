@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		58252FE61E55FB890023F47B /* Socket.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58252FE51E55FB890023F47B /* Socket.swift */; };
 		5861BCCB1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5861BCCA1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift */; };
+		5861BCCD1E5B16E800A1B9D4 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 5861BCCC1E5B16E800A1B9D4 /* GoogleService-Info.plist */; };
 		586524091E51872200E3E79C /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 586524081E51872200E3E79C /* AppDelegate.swift */; };
 		5865240B1E51872200E3E79C /* paymentTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5865240A1E51872200E3E79C /* paymentTableViewController.swift */; };
 		5865240E1E51872200E3E79C /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5865240C1E51872200E3E79C /* Main.storyboard */; };
@@ -61,6 +62,7 @@
 /* Begin PBXFileReference section */
 		58252FE51E55FB890023F47B /* Socket.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Socket.swift; sourceTree = "<group>"; };
 		5861BCCA1E5ADF7E00A1B9D4 /* GetUserNameViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GetUserNameViewController.swift; sourceTree = "<group>"; };
+		5861BCCC1E5B16E800A1B9D4 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		586524051E51872200E3E79C /* CouponBellClient.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CouponBellClient.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		586524081E51872200E3E79C /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5865240A1E51872200E3E79C /* paymentTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = paymentTableViewController.swift; sourceTree = "<group>"; };
@@ -142,6 +144,7 @@
 		586524071E51872200E3E79C /* CouponBellClient */ = {
 			isa = PBXGroup;
 			children = (
+				5861BCCC1E5B16E800A1B9D4 /* GoogleService-Info.plist */,
 				586524081E51872200E3E79C /* AppDelegate.swift */,
 				58252FE51E55FB890023F47B /* Socket.swift */,
 				58C1A7DC1E55A64F00B64413 /* Controller */,
@@ -298,6 +301,7 @@
 				586524131E51872200E3E79C /* LaunchScreen.storyboard in Resources */,
 				586524101E51872200E3E79C /* Assets.xcassets in Resources */,
 				5865240E1E51872200E3E79C /* Main.storyboard in Resources */,
+				5861BCCD1E5B16E800A1B9D4 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

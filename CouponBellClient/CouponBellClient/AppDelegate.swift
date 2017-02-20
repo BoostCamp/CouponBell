@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate, NetServiceDelegate, StreamDelegate {
@@ -33,6 +34,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         client.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
         client.delegate = self
         client.publish(options: .listenForConnections)
+        
+        FIRApp.configure()
         return true
     }
 

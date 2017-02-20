@@ -7,5 +7,7 @@ target 'CouponBellClient' do
 
   #Pod for CouponBellClient
   pod 'SwiftyJSON'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
 
 end
