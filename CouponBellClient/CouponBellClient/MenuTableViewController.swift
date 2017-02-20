@@ -24,6 +24,9 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
     var tableNum = -1
     var allMenus: Results<Menu>?
     
+    
+    var myNetwork = MyNetwork()
+    
     override func viewDidLoad(){
 ///////////////////////////////////////////////////////////////////////////////////////
 //        dbQuery.addMenuList(type: "Coffee", product: "Americano", price: 2000)     //
@@ -41,6 +44,10 @@ class MenuTableViewController: UIViewController, UITableViewDataSource, UITableV
         for menu in allMenus!{
             appDelegate.myOrderList.append(MyOrderList(type: menu.type, product: menu.product, price: menu.price))
         }
+        
+        myNetwork.publishService()
+        myNetwork.searchService()
+        
         tableView.reloadData()//전체 데이터 다 다시읽기
     }
     

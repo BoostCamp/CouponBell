@@ -1,63 +1,40 @@
 //
-//  AppDelegate.swift
+//  MyNetwork.swift
 //  CouponBellClient
 //
-//  Created by NEXT on 2017. 2. 13..
+//  Created by NEXT on 2017. 2. 18..
 //  Copyright © 2017년 BoostCamp. All rights reserved.
 //
 
+import Foundation
 import UIKit
+import SwiftyJSON
 
-@UIApplicationMain
-class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate, NetServiceDelegate, StreamDelegate {
 
-    var window: UIWindow?
+class MyNetwork: NSObject, NetServiceDelegate, NetServiceBrowserDelegate, StreamDelegate{
+
     var myOrderList = [MyOrderList]()
     var browser: NetServiceBrowser!
     var server: NetService!
     var client: NetService!
     let socket: Socket? = Socket()
-    
-    func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-        // Override point for customization after application launch.
-        
-        //setting browser to browsing Server service
-        self.browser = NetServiceBrowser()
-        self.browser.includesPeerToPeer = true
-        browser.delegate = self
-        browser.searchForServices(ofType: "_test._tcp", inDomain: "local")
-        
+
+    // MARK: init
+    func publishService(){
         //publish service for client
         client = NetService.init(domain: "local", type: "_test._tcp", name: "JanghoHan", port: 3000)
         client.includesPeerToPeer = true
         client.schedule(in: RunLoop.current, forMode: RunLoopMode.commonModes)
         client.delegate = self
         client.publish(options: .listenForConnections)
-        return true
-    }
-
-    func applicationWillResignActive(_ application: UIApplication) {
-        // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
-        // Use this method to pause ongoing tasks, disable timers, and invalidate graphics rendering callbacks. Games should use this method to pause the game.
-    }
-
-    func applicationDidEnterBackground(_ application: UIApplication) {
-        // Use this method to release shared resources, save user data, invalidate timers, and store enough application state information to restore your application to its current state in case it is terminated later.
-        // If your application supports background execution, this method is called instead of applicationWillTerminate: when the user quits.
-    }
-
-    func applicationWillEnterForeground(_ application: UIApplication) {
-        // Called as part of the transition from the background to the active state; here you can undo many of the changes made on entering the background.
-    }
-
-    func applicationDidBecomeActive(_ application: UIApplication) {
-        // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
-    }
-
-    func applicationWillTerminate(_ application: UIApplication) {
-        // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
+    func searchService(){
+        self.browser = NetServiceBrowser()
+        self.browser.includesPeerToPeer = true
+        browser.delegate = self
+        browser.searchForServices(ofType: "_test._tcp", inDomain: "local")
+    }
     
     // MARK: NetService Delegate
     
@@ -86,8 +63,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         
         self.initSocket(self.getIPV4StringfromAddress(server.addresses!) as CFString , port: UInt32(server.port))
         print(server.addresses!)
-//        sendMessage(msg: "ABCDE")
-
+        //        sendMessage(msg: "ABCDE")
+        
         
     }
     
@@ -143,8 +120,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
     func netServiceBrowser(_ browser: NetServiceBrowser, didRemoveDomain domainString: String, moreComing: Bool) {
         print("netServiceBrowser didRemoveDomain Domain : \(domainString)")
     }
-
-
+    
+    
     // get IP Adress
     
     func updateInterface () {
@@ -213,20 +190,12 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         
         do {
             
-            ///////////////////////////////////////
-            //요청 형태 구분해서 JSON 맨 앞에 배치시킬 것!//
-            //////////////////////////////////////
-            let requestType: [String : String] = ["RequestType" : "Order"]
-            let clientName: [String : String] = [ "ClientName" : "클라이언트 이름"]
-            let orderListDicDic: [String : AnyObject] = ["OrderList" : orderListDic as AnyObject]
+            let clientName : [String : String  ] = [ "ClientName" : "클라이언트 이름"]
+            let orderListDicDic    : [String : AnyObject] = ["OrderList" : orderListDic as AnyObject]
             let temp = NSMutableDictionary(dictionary: orderListDicDic)
-
-            temp.addEntries(from: requestType)
-            temp.addEntries(from: clientName)
+            temp.addEntries(from: clientName);
             
-            
-            let jsonData = try JSONSerialization.data(withJSONObject: temp, options: .prettyPrinted)
-            
+            let jsonData = try JSONSerialization.data(withJSONObject: temp)
             
             let data = jsonData as Data?
             print("\(socket?.outputStream) ==> Pass JSON Data : \(temp)")
@@ -257,4 +226,3 @@ class AppDelegate: UIResponder, UIApplicationDelegate, NetServiceBrowserDelegate
         return false
     }
 }
-

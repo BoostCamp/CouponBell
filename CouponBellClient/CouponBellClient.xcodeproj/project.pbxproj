@@ -28,6 +28,8 @@
 		58C1A7D01E54382800B64413 /* paymentTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7CF1E54382800B64413 /* paymentTableViewCell.swift */; };
 		58C1A7E01E55A6BA00B64413 /* MyOrderList.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7DF1E55A6BA00B64413 /* MyOrderList.swift */; };
 		58C1A7E21E55AA4600B64413 /* DbQuery.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C1A7E11E55AA4600B64413 /* DbQuery.swift */; };
+		58C2D3DD1E5826A700FCA6EF /* MyNetwork.swift in Sources */ = {isa = PBXBuildFile; fileRef = 58C2D3DC1E5826A700FCA6EF /* MyNetwork.swift */; };
+		AF06DD459C79D41D56A64A94 /* Pods_CouponBellClient.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 86C3B05C80678C7151ACF0DC /* Pods_CouponBellClient.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -77,6 +79,10 @@
 		58C1A7CF1E54382800B64413 /* paymentTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = paymentTableViewCell.swift; sourceTree = "<group>"; };
 		58C1A7DF1E55A6BA00B64413 /* MyOrderList.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyOrderList.swift; sourceTree = "<group>"; };
 		58C1A7E11E55AA4600B64413 /* DbQuery.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DbQuery.swift; sourceTree = "<group>"; };
+		58C2D3DC1E5826A700FCA6EF /* MyNetwork.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyNetwork.swift; sourceTree = "<group>"; };
+		86C3B05C80678C7151ACF0DC /* Pods_CouponBellClient.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CouponBellClient.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E9D63FB83BA5C7043489D80 /* Pods-CouponBellClient.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponBellClient.release.xcconfig"; path = "Pods/Target Support Files/Pods-CouponBellClient/Pods-CouponBellClient.release.xcconfig"; sourceTree = "<group>"; };
+		A4E6DE0AC172AABEBE1ED117 /* Pods-CouponBellClient.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CouponBellClient.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CouponBellClient/Pods-CouponBellClient.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +94,7 @@
 				58C1A79C1E540E4B00B64413 /* Realm.framework in Frameworks */,
 				58C1A79B1E540E4B00B64413 /* RealmSwift.framework in Frameworks */,
 				58C1A79D1E540E7900B64413 /* RealmSwift.framework in Frameworks */,
+				AF06DD459C79D41D56A64A94 /* Pods_CouponBellClient.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,12 +108,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		36F28E1A5921453C027F476A /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				A4E6DE0AC172AABEBE1ED117 /* Pods-CouponBellClient.debug.xcconfig */,
+				8E9D63FB83BA5C7043489D80 /* Pods-CouponBellClient.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		586523FC1E51872200E3E79C = {
 			isa = PBXGroup;
 			children = (
 				586524071E51872200E3E79C /* CouponBellClient */,
 				5865241C1E51872200E3E79C /* CouponBellClientTests */,
 				586524061E51872200E3E79C /* Products */,
+				36F28E1A5921453C027F476A /* Pods */,
+				664402FE33962A2EBCE7E80E /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -172,8 +190,17 @@
 				5865242E1E518B4600E3E79C /* Menu.swift */,
 				58C1A7DF1E55A6BA00B64413 /* MyOrderList.swift */,
 				58C1A7E11E55AA4600B64413 /* DbQuery.swift */,
+				58C2D3DC1E5826A700FCA6EF /* MyNetwork.swift */,
 			);
 			name = Model;
+			sourceTree = "<group>";
+		};
+		664402FE33962A2EBCE7E80E /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				86C3B05C80678C7151ACF0DC /* Pods_CouponBellClient.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -183,11 +210,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 586524221E51872200E3E79C /* Build configuration list for PBXNativeTarget "CouponBellClient" */;
 			buildPhases = (
+				ADAAB543304CA65F0A5F1430 /* [CP] Check Pods Manifest.lock */,
 				586524011E51872200E3E79C /* Sources */,
 				586524021E51872200E3E79C /* Frameworks */,
 				586524031E51872200E3E79C /* Resources */,
 				58C1A7A11E540E7900B64413 /* Embed Frameworks */,
 				58C1A7A21E540EAB00B64413 /* ShellScript */,
+				6CC125B0138168E02478D419 /* [CP] Embed Pods Frameworks */,
+				8BB1EF4659E8E3C1C0D0A0F8 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -293,6 +323,51 @@
 			shellPath = /bin/sh;
 			shellScript = "bash \"${BUILT_PRODUCTS_DIR}/${FRAMEWORKS_FOLDER_PATH}/Realm.framework/strip-frameworks.sh\"";
 		};
+		6CC125B0138168E02478D419 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouponBellClient/Pods-CouponBellClient-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BB1EF4659E8E3C1C0D0A0F8 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CouponBellClient/Pods-CouponBellClient-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		ADAAB543304CA65F0A5F1430 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
@@ -302,6 +377,7 @@
 			files = (
 				586524371E5192FF00E3E79C /* CartTableViewCell.swift in Sources */,
 				586524391E51950F00E3E79C /* MenuTableViewController.swift in Sources */,
+				58C2D3DD1E5826A700FCA6EF /* MyNetwork.swift in Sources */,
 				5865243B1E51955500E3E79C /* MenuTableViewCell.swift in Sources */,
 				586524311E518B4600E3E79C /* Menu.swift in Sources */,
 				58C1A7E01E55A6BA00B64413 /* MyOrderList.swift in Sources */,
@@ -447,6 +523,7 @@
 		};
 		586524231E51872200E3E79C /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = A4E6DE0AC172AABEBE1ED117 /* Pods-CouponBellClient.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LHA4V9P7V8;
@@ -464,6 +541,7 @@
 		};
 		586524241E51872200E3E79C /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8E9D63FB83BA5C7043489D80 /* Pods-CouponBellClient.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = LHA4V9P7V8;
